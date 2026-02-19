@@ -1,46 +1,89 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TradeVolt – Coming Soon</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TradeVolt — Coming Soon</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Smooth animated “loading” bar */
+    @keyframes loadSweep {
+      0%   { transform: translateX(-55%); }
+      100% { transform: translateX(55%); }
+    }
+  </style>
 </head>
 
-<body class="min-h-screen bg-black text-white flex items-center justify-center">
+<body class="min-h-screen text-white">
+  <!-- Fullscreen background image -->
+  <div
+    class="min-h-screen bg-black bg-center bg-cover flex items-center justify-center px-6"
+    style="background-image:url('coming-soon-bg.png');"
+  >
+    <!-- Dark overlay for readability -->
+    <div class="absolute inset-0 bg-black/55"></div>
 
-  <img src="tradevolt-logo.png" 
-     class="mx-auto w-[460px] mb-12 drop-shadow-[0_0_35px_rgba(132,204,22,0.7)]"
-     alt="TradeVolt Logo">
+    <!-- Content card (keeps the vibe but makes form readable) -->
+    <div class="relative w-full max-w-xl text-center">
+      <!-- Optional: small top line -->
+      <p class="text-xs md:text-sm tracking-[0.35em] uppercase text-white/70">
+        A new online electrical wholesale experience
+      </p>
 
-    <h1 class="text-5xl font-bold mb-6">
-      A New Online Electrical Wholesale Experience
-    </h1>
+      <h1 class="mt-5 text-4xl md:text-6xl font-extrabold tracking-[0.18em] uppercase">
+        Coming Soon
+      </h1>
 
-    <p class="text-white/70 mb-6">
-      Big Brands. Big Discounts. Excellent Customer Service.
-    </p>
+      <!-- Loading bar -->
+      <div class="mt-6">
+        <div class="mx-auto h-2 w-72 md:w-96 rounded-full bg-white/15 overflow-hidden ring-1 ring-white/10">
+          <div
+            class="h-full w-1/2 rounded-full bg-gradient-to-r from-lime-400 via-emerald-400 to-cyan-400"
+            style="animation: loadSweep 2.2s ease-in-out infinite;"
+          ></div>
+        </div>
+        <p class="mt-3 text-xs tracking-[0.35em] uppercase text-white/60">Loading</p>
+      </div>
 
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
-      <input 
-        type="email" 
-        name="email" 
-        required 
-        placeholder="Enter your email"
-        class="w-full px-4 py-3 rounded bg-white text-black"
-      >
-      <button 
-        type="submit"
-        class="w-full bg-lime-500 text-black font-semibold py-3 rounded hover:bg-lime-400"
-      >
-        Notify Me
-      </button>
-    </form>
+      <!-- Email capture -->
+      <div class="mt-10 mx-auto max-w-md rounded-2xl bg-black/45 backdrop-blur-md border border-white/10 p-6">
+        <p class="text-sm text-white/80">
+          Want first access and launch updates?
+        </p>
 
-    <p class="text-xs text-white/50 mt-6">
-      We’ll notify you when we launch.
-    </p>
+        <!-- Formspree: replace YOUR_FORM_ID -->
+        <form
+          class="mt-5 space-y-3"
+          action="https://formspree.io/f/maqdbzqz"
+          method="POST"
+        >
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="Enter your email"
+            class="w-full px-4 py-3 rounded-xl bg-white text-black placeholder:text-black/50 outline-none ring-1 ring-black/10"
+          />
+
+          <button
+            type="submit"
+            class="w-full rounded-xl bg-lime-500 text-black font-semibold py-3 hover:bg-lime-400 transition"
+          >
+            Notify Me
+          </button>
+
+          <p class="text-xs text-white/55 mt-2">
+            We’ll only email you about launch updates. Unsubscribe anytime.
+          </p>
+        </form>
+      </div>
+
+      <!-- Optional footer logo (if you want your logo visible too) -->
+      <!--
+      <img src="tradevolt-logo.png" class="mx-auto mt-8 w-40 opacity-90" alt="TradeVolt">
+      -->
+    </div>
   </div>
-
 </body>
 </html>

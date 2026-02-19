@@ -20,14 +20,13 @@
   <style>
     body { margin: 0; background: black; }
 
-    /* Smooth ping-pong loading bar (no jump) */
-    @keyframes loadPingPong {
-      0%   { transform: translateX(-60%); }
-      50%  { transform: translateX(120%); }
-      100% { transform: translateX(-60%); }
+    /* Continuous loading sweep (wrap-around loop, no ping-pong) */
+    @keyframes loadLoop {
+      0%   { transform: translateX(-120%); }
+      100% { transform: translateX(220%); }
     }
-    .loading-sweep {
-      animation: loadPingPong 3.6s ease-in-out infinite;
+    .loading-loop {
+      animation: loadLoop 2.6s linear infinite;
     }
 
     /* Logo glow pulse */
@@ -84,10 +83,12 @@
         Coming Soon
       </h1>
 
-      <!-- Loading Bar -->
+      <!-- Loading Bar (continuous loop) -->
       <div class="w-72 md:w-96 mt-1">
         <div class="h-2 rounded-full bg-white/20 overflow-hidden ring-1 ring-white/10">
-          <div class="h-full w-[45%] rounded-full bg-gradient-to-r from-lime-400 via-emerald-400 to-cyan-400 loading-sweep"></div>
+          <div class="h-full w-full relative">
+            <div class="absolute top-0 left-0 h-full w-[45%] rounded-full bg-gradient-to-r from-lime-400 via-emerald-400 to-cyan-400 loading-loop"></div>
+          </div>
         </div>
         <p class="mt-2 text-xs tracking-[0.35em] uppercase text-white/60">
           Loading
@@ -145,7 +146,7 @@
         </svg>
       </a>
 
-      <!-- Instagram (fixed) -->
+      <!-- Instagram -->
       <a href="https://instagram.com/TradeVoltUK" target="_blank" class="group transition" aria-label="Instagram">
         <svg class="w-6 h-6 text-white/60 group-hover:text-lime-400 group-hover:drop-shadow-[0_0_12px_rgba(132,204,22,0.9)] transition"
              fill="currentColor" viewBox="0 0 24 24">
@@ -153,7 +154,7 @@
         </svg>
       </a>
 
-      <!-- Facebook (fixed) -->
+      <!-- Facebook -->
       <a href="https://facebook.com/TradeVoltUK" target="_blank" class="group transition" aria-label="Facebook">
         <svg class="w-6 h-6 text-white/60 group-hover:text-lime-400 group-hover:drop-shadow-[0_0_12px_rgba(132,204,22,0.9)] transition"
              fill="currentColor" viewBox="0 0 24 24">

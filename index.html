@@ -9,11 +9,17 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    body {
-      margin: 0;
-      background: black;
-    }
+  body { margin: 0; background: black; }
+
+  @keyframes loadSweep {
+    0% { transform: translateX(-60%); }
+    100% { transform: translateX(120%); }
+  }
+  .loading-sweep {
+    animation: loadSweep 2.2s ease-in-out infinite;
+  }
   </style>
+
 </head>
 
 <body class="text-white">
@@ -31,12 +37,13 @@
   <!-- Centered Content -->
   <div class="relative min-h-screen flex items-center justify-center px-6">
 
-    <div class="text-center flex flex-col items-center space-y-5">
+    <div class="text-center flex flex-col items-center space-y-2">
 
       <!-- Top Tagline -->
-      <p class="text-xs md:text-sm tracking-[0.35em] uppercase text-white/70">
+      <p class="text-sm md:text-base tracking-[0.35em] uppercase text-white/80 leading-tight">
         A New Online Electrical Wholesale Experience
       </p>
+
 
       <!-- Logo -->
       <img src="tradevolt-logo.png"
@@ -51,7 +58,7 @@
       <!-- Loading Bar -->
       <div class="w-72 md:w-96 mt-1">
         <div class="h-2 rounded-full bg-white/20 overflow-hidden ring-1 ring-white/10">
-          <div class="h-full w-1/2 rounded-full bg-gradient-to-r from-lime-400 via-emerald-400 to-cyan-400 animate-pulse"></div>
+          <div class="h-full w-[45%] rounded-full bg-gradient-to-r from-lime-400 via-emerald-400 to-cyan-400 loading-sweep"></div>
         </div>
         <p class="mt-2 text-xs tracking-[0.35em] uppercase text-white/60">
           Loading

@@ -5,45 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TradeVolt | Coming Soon</title>
 
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     body { margin: 0; background: black; }
 
+    /* Loading bar sweep */
     @keyframes loadSweep {
       0% { transform: translateX(-60%); }
       100% { transform: translateX(120%); }
     }
     .loading-sweep {
-      animation: loadSweep 2.2s ease-in-out infinite;
+      animation: loadSweep 3.5s ease-in-out infinite; /* slowed down */
+    }
+
+    /* Logo glow pulse */
+    @keyframes glowPulse {
+      0%, 100% { filter: drop-shadow(0 0 55px rgba(132,204,22,0.55)); }
+      50%      { filter: drop-shadow(0 0 85px rgba(132,204,22,0.9)); }
+    }
+    .logo-glow {
+      animation: glowPulse 3.8s ease-in-out infinite;
+    }
+
+    /* Page fade-in */
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .page-enter {
+      animation: fadeUp 0.9s ease-out both;
     }
   </style>
 </head>
 
 <body class="relative min-h-screen text-white overflow-hidden">
 
- 
- <!-- SINGLE Background (CSS controlled so the moon is always visible) -->
+  <!-- Background (CSS controlled so the moon is always visible) -->
   <div
-  class="fixed inset-0 -z-10"
-  style="
-    background-image: url('moon-bg.png');
-    background-repeat: no-repeat;
-    background-size: 1400px auto;
-    background-position: left 35% top 45%;
-    background-color: #000;
-  "
+    class="fixed inset-0 -z-10"
+    style="
+      background-image: url('moon-bg.png');
+      background-repeat: no-repeat;
+      background-size: 1400px auto;
+      background-position: left 35% top 45%;
+      background-color: #000;
+    "
   >
-  <!-- Overlay (lighter so moon shows) -->
-  <div class="absolute inset-0 bg-black/45"></div>
-</div>
-
     <!-- Overlay (lighter so moon shows) -->
-    <div class="absolute inset-0 bg-black/55"></div>
+    <div class="absolute inset-0 bg-black/45"></div>
   </div>
 
   <!-- Centered Content -->
-  <div class="relative min-h-screen flex items-center justify-center px-6">
+  <div class="relative min-h-screen flex items-center justify-center px-6 page-enter">
     <div class="text-center flex flex-col items-center space-y-4">
 
       <!-- Top Tagline -->
@@ -55,11 +70,11 @@
       <img
         src="tradevolt-logo.png"
         alt="TradeVolt Logo"
-        class="w-[480px] max-w-[95%] drop-shadow-[0_0_80px_rgba(132,204,22,0.85)]"
+        class="w-[480px] max-w-[95%] logo-glow"
       />
 
-      <!-- Coming Soon (slightly smaller) -->
-      <h1 class="text-3xl md:text-5xl font-extrabold tracking-[0.22em] uppercase">
+      <!-- Coming Soon -->
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-[0.18em] uppercase">
         Coming Soon
       </h1>
 
@@ -79,6 +94,7 @@
           Want first access and launch updates?
         </p>
 
+        <!-- 🔁 Replace YOUR_FORM_ID with your real Formspree ID -->
         <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-3">
           <input
             type="email"

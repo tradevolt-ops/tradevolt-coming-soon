@@ -105,20 +105,31 @@
           Want first access and launch updates?
         </p>
 
-        <!-- 🔁 Replace YOUR_FORM_ID with your real Formspree ID -->
-        <form action="https://formspree.io/f/maqdbzqz" method="POST" class="space-y-3">
-         
-          <input type="hidden" name="_redirect" value="https://tradevolt.co.uk/thank-you.html">
+     <!-- Email Form -->
+<form action="https://formspree.io/f/maqdbzqz" method="POST" class="space-y-4 w-full">
 
-          <input type="email" name="email" required placeholder="Enter your email">
-          
-          <button
-            type="submit"
-            class="w-full rounded-xl bg-lime-500 text-black font-semibold py-3 hover:bg-lime-400 transition"
-          >
-            Notify Me
-          </button>
-        </form>
+  <!-- Redirect after success -->
+  <input type="hidden" name="_redirect" value="https://tradevolt.co.uk/thank-you.html">
+
+  <!-- Email Input -->
+  <input 
+    type="email"
+    name="email"
+    required
+    placeholder="Enter your email"
+    class="w-full px-4 py-3 rounded-xl bg-white text-black placeholder-gray-500 outline-none focus:ring-2 focus:ring-lime-400 transition"
+  >
+
+  <!-- Submit Button -->
+  <button
+    type="submit"
+    class="w-full rounded-xl bg-lime-500 text-black font-semibold py-3 hover:bg-lime-400 transition"
+  >
+    Notify Me
+  </button>
+
+</form>
+
 
         <p class="text-xs text-white/50 mt-4">
           We’ll only email you about launch updates.

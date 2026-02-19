@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You | TradeVolt</title>
+  <title>TradeVolt | Thank You</title>
 
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Analytics -->
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8W7HSX2MB"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -16,30 +20,118 @@
     gtag('config', 'G-S8W7HSX2MB');
   </script>
 
+  <style>
+    body { margin: 0; background: black; }
+
+    /* Same animated sweep vibe as index */
+    @keyframes loadSweep {
+      0% { transform: translateX(-60%); }
+      100% { transform: translateX(120%); }
+    }
+    .loading-sweep {
+      animation: loadSweep 2.2s ease-in-out infinite;
+    }
+
+    /* Soft “breathing” glow behind logo/card */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.35; filter: blur(38px); transform: scale(1); }
+      50% { opacity: 0.55; filter: blur(42px); transform: scale(1.04); }
+    }
+    .pulse-glow {
+      animation: pulseGlow 4.5s ease-in-out infinite;
+    }
+  </style>
 </head>
 
-<body class="min-h-screen bg-black text-white flex items-center justify-center px-6">
+<body class="relative min-h-screen text-white overflow-hidden">
 
-  <div class="text-center space-y-6">
-
-    <h1 class="text-4xl md:text-6xl font-extrabold uppercase tracking-widest">
-      You're In ⚡
-    </h1>
-
-    <p class="text-lg text-white/80">
-      Thanks for signing up.
-    </p>
-
-    <p class="text-white/60">
-      We’ll notify you as soon as TradeVolt goes live.
-    </p>
-
-    <a href="https://tradevolt.co.uk"
-       class="inline-block mt-6 px-6 py-3 bg-lime-500 text-black font-semibold rounded-xl hover:bg-lime-400 transition">
-       Back to Homepage
-    </a>
-
+  <!-- Background (moon) -->
+  <div class="fixed inset-0 -z-20">
+    <img
+      src="moon-bg.png"
+      alt="Moon Background"
+      class="w-full h-full object-cover opacity-90"
+    />
   </div>
+
+  <!-- Dark overlay for readability -->
+  <div class="fixed inset-0 -z-10 bg-black/70"></div>
+
+  <!-- Centered content -->
+  <main class="relative min-h-screen flex items-center justify-center px-6">
+    <section class="w-full max-w-2xl text-center flex flex-col items-center">
+
+      <!-- Top line -->
+      <p class="text-sm md:text-base tracking-[0.35em] uppercase text-white/80">
+        A New Online Electrical Wholesale Experience
+      </p>
+
+      <!-- Logo + glow -->
+      <div class="relative mt-6 mb-6 flex items-center justify-center">
+        <div class="absolute w-[520px] max-w-[92vw] h-[220px] bg-lime-500/25 rounded-full pulse-glow"></div>
+        <img
+          src="tradevolt-logo.png"
+          alt="TradeVolt Logo"
+          class="relative w-[420px] max-w-[92vw] drop-shadow-[0_0_90px_rgba(132,204,22,0.9)]"
+        />
+      </div>
+
+      <!-- Big success heading -->
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-[0.18em] uppercase">
+        You’re on the list
+      </h1>
+
+      <!-- Subtext -->
+      <p class="mt-4 text-white/75 text-base md:text-lg max-w-xl leading-relaxed">
+        Thanks for signing up. We’ll email you when TradeVolt launches — with early access,
+        big brand deals, and updates as we build.
+      </p>
+
+      <!-- Loading bar / energy line -->
+      <div class="w-72 md:w-[28rem] mt-8">
+        <div class="h-2 rounded-full bg-white/20 overflow-hidden ring-1 ring-white/10">
+          <div class="h-full w-[45%] rounded-full bg-gradient-to-r from-lime-400 via-emerald-400 to-cyan-400 loading-sweep"></div>
+        </div>
+        <p class="mt-2 text-xs tracking-[0.35em] uppercase text-white/60">
+          Confirmed
+        </p>
+      </div>
+
+      <!-- CTA card -->
+      <div class="mt-10 w-full max-w-lg bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl p-6">
+        <p class="text-sm text-white/80">
+          Want to share this with a mate or your team?
+        </p>
+
+        <div class="mt-4 flex flex-col sm:flex-row gap-3">
+          <a
+            href="/"
+            class="flex-1 rounded-xl bg-lime-500 text-black font-semibold py-3 hover:bg-lime-400 transition text-center"
+          >
+            Back to Homepage
+          </a>
+
+          <button
+            type="button"
+            class="flex-1 rounded-xl bg-white/10 text-white font-semibold py-3 hover:bg-white/15 transition border border-white/10"
+            onclick="navigator.clipboard.writeText(window.location.origin); this.innerText='Link Copied ✅';"
+          >
+            Copy Site Link
+          </button>
+        </div>
+
+        <p class="text-xs text-white/50 mt-4">
+          You can close this page — we’ll be in touch soon.
+        </p>
+      </div>
+
+      <!-- Footer micro -->
+      <p class="mt-8 text-xs text-white/40 tracking-[0.25em] uppercase">
+        TradeVolt Electrical Supplies
+      </p>
+
+    </section>
+  </main>
 
 </body>
 </html>

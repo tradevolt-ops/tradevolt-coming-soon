@@ -1,123 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TradeVolt — Coming Soon</title>
+  <title>TradeVolt | Coming Soon</title>
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    @keyframes loadSweep {
-      0% { transform: translateX(-55%); }
-      100% { transform: translateX(55%); }
+    body {
+      margin: 0;
+      background: black;
     }
   </style>
 </head>
 
-<body class="min-h-screen text-white bg-black">
+<body class="text-white">
 
   <!-- Background -->
-  <div class="absolute inset-0 bg-cover bg-center"
-       style="background-image:url('moon-bg.png');">
+  <div class="fixed inset-0 -z-10">
+    <img src="coming-soon-bg.png"
+         class="w-full h-full object-cover opacity-80"
+         alt="Moon Background">
+
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-black/70"></div>
   </div>
 
-  <!-- Dark overlay -->
-  <div class="absolute inset-0 bg-black/60"></div>
+  <!-- Centered Content -->
+  <div class="relative min-h-screen flex items-center justify-center px-6">
 
-  <!-- Content -->
-<div class="relative min-h-screen flex items-center justify-center px-6">
+    <div class="text-center flex flex-col items-center space-y-5">
 
-  <div class="text-center flex flex-col items-center space-y-4">
+      <!-- Top Tagline -->
+      <p class="text-xs md:text-sm tracking-[0.35em] uppercase text-white/70">
+        A New Online Electrical Wholesale Experience
+      </p>
 
-    <!-- Top Line -->
-    <p class="text-xs md:text-sm tracking-[0.35em] uppercase text-white/70">
-      A new online electrical wholesale experience
-    </p>
+      <!-- Logo -->
+      <img src="tradevolt-logo.png"
+           alt="TradeVolt Logo"
+           class="w-[620px] max-w-[95%] drop-shadow-[0_0_80px_rgba(132,204,22,0.85)]">
 
-    <!-- Logo -->
-    <img src="tradevolt-logo.png"
-         class="w-[600px] max-w-[95%] drop-shadow-[0_0_80px_rgba(132,204,22,0.85)]"
-         alt="TradeVolt Logo">
+      <!-- Coming Soon -->
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-[0.25em] uppercase">
+        Coming Soon
+      </h1>
 
-    <!-- Coming Soon -->
-    <h1 class="text-4xl md:text-6xl font-extrabold tracking-[0.25em] uppercase">
-      Coming Soon
-    </h1>
-
-    <!-- Loading Bar -->
-    <div class="w-72 md:w-96 mt-2">
-      <div class="h-2 rounded-full bg-white/20 overflow-hidden ring-1 ring-white/10">
-        <div class="h-full w-1/2 rounded-full bg-gradient-to-r from-lime-400 via-emerald-400 to-cyan-400 animate-pulse">
+      <!-- Loading Bar -->
+      <div class="w-72 md:w-96 mt-1">
+        <div class="h-2 rounded-full bg-white/20 overflow-hidden ring-1 ring-white/10">
+          <div class="h-full w-1/2 rounded-full bg-gradient-to-r from-lime-400 via-emerald-400 to-cyan-400 animate-pulse"></div>
         </div>
+        <p class="mt-2 text-xs tracking-[0.35em] uppercase text-white/60">
+          Loading
+        </p>
       </div>
-      <p class="mt-2 text-xs tracking-[0.35em] uppercase text-white/60">
-        Loading
-      </p>
-    </div>
 
-    <!-- Notify Form -->
-    <div class="mt-6 w-full max-w-md bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl p-6">
-      <p class="text-sm text-white/80 mb-4">
-        Want first access and launch updates?
-      </p>
+      <!-- Notify Form -->
+      <div class="mt-6 w-full max-w-md bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl p-6">
+        <p class="text-sm text-white/80 mb-4">
+          Want first access and launch updates?
+        </p>
 
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-3">
-        <input type="email"
-               name="email"
-               required
-               placeholder="Enter your email"
-               class="w-full px-4 py-3 rounded-xl bg-white text-black outline-none">
+        <!-- 🔁 Replace YOUR_FORM_ID with your real Formspree ID -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-3">
+          <input type="email"
+                 name="email"
+                 required
+                 placeholder="Enter your email"
+                 class="w-full px-4 py-3 rounded-xl bg-white text-black outline-none">
 
-        <button type="submit"
-                class="w-full rounded-xl bg-lime-500 text-black font-semibold py-3 hover:bg-lime-400 transition">
-          Notify Me
-        </button>
-      </form>
-    </div>
+          <button type="submit"
+                  class="w-full rounded-xl bg-lime-500 text-black font-semibold py-3 hover:bg-lime-400 transition">
+            Notify Me
+          </button>
+        </form>
 
-  </div>
-</div>
-
-
-    <!-- Notify Form -->
-    <div class="mt-6 w-full max-w-md bg-black/50 backdrop-blur-md border bo
-
-  <!-- Loading bar -->
-    <div class="mb-6">
-      <div class="h-2 w-72 md:w-96 rounded-full bg-white/20 overflow-hidden ring-1 ring-white/10 mx-auto">
-        <div class="h-full w-1/2 rounded-full bg-gradient-to-r from-lime-400 via-emerald-400 to-cyan-400"
-             style="animation: loadSweep 2.5s ease-in-out infinite;">
-        </div>
+        <p class="text-xs text-white/50 mt-4">
+          We’ll only email you about launch updates.
+        </p>
       </div>
-      <p class="mt-3 text-xs tracking-[0.35em] uppercase text-white/60">
-        Loading
-      </p>
+
     </div>
-
-    <!-- Notify Form -->
-    <div class="w-full max-w-md bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl p-6">
-      <p class="text-sm text-white/80 mb-4">
-        Want first access and launch updates?
-      </p>
-
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-3">
-        <input type="email"
-               name="email"
-               required
-               placeholder="Enter your email"
-               class="w-full px-4 py-3 rounded-xl bg-white text-black outline-none">
-
-        <button type="submit"
-                class="w-full rounded-xl bg-lime-500 text-black font-semibold py-3 hover:bg-lime-400 transition">
-          Notify Me
-        </button>
-      </form>
-
-      <p class="text-xs text-white/55 mt-3">
-        We’ll only email you about launch updates.
-      </p>
-    </div>
-
   </div>
 
 </body>

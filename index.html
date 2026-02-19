@@ -25,22 +25,62 @@
   <div class="absolute inset-0 bg-black/60"></div>
 
   <!-- Content -->
-<div class="relative min-h-screen flex flex-col items-center text-center px-6 pt-12 md:pt-16">
+<div class="relative min-h-screen flex items-center justify-center px-6">
 
-  <!-- Top Line -->
-  <p class="text-xs md:text-sm tracking-[0.4em] uppercase text-white/70 mb-3">
-    A new online electrical wholesale experience
-  </p>
+  <div class="text-center flex flex-col items-center space-y-4">
 
-  <!-- Bigger Logo -->
-  <img src="tradevolt-logo.png"
-       class="w-[620px] max-w-[95%] mb-4 drop-shadow-[0_0_70px_rgba(132,204,22,0.8)]"
-       alt="TradeVolt Logo">
+    <!-- Top Line -->
+    <p class="text-xs md:text-sm tracking-[0.35em] uppercase text-white/70">
+      A new online electrical wholesale experience
+    </p>
 
-  <!-- Coming Soon -->
-  <h1 class="text-4xl md:text-6xl font-extrabold tracking-[0.25em] uppercase mb-4">
-    Coming Soon
-  </h1>
+    <!-- Logo -->
+    <img src="tradevolt-logo.png"
+         class="w-[600px] max-w-[95%] drop-shadow-[0_0_80px_rgba(132,204,22,0.85)]"
+         alt="TradeVolt Logo">
+
+    <!-- Coming Soon -->
+    <h1 class="text-4xl md:text-6xl font-extrabold tracking-[0.25em] uppercase">
+      Coming Soon
+    </h1>
+
+    <!-- Loading Bar -->
+    <div class="w-72 md:w-96 mt-2">
+      <div class="h-2 rounded-full bg-white/20 overflow-hidden ring-1 ring-white/10">
+        <div class="h-full w-1/2 rounded-full bg-gradient-to-r from-lime-400 via-emerald-400 to-cyan-400 animate-pulse">
+        </div>
+      </div>
+      <p class="mt-2 text-xs tracking-[0.35em] uppercase text-white/60">
+        Loading
+      </p>
+    </div>
+
+    <!-- Notify Form -->
+    <div class="mt-6 w-full max-w-md bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl p-6">
+      <p class="text-sm text-white/80 mb-4">
+        Want first access and launch updates?
+      </p>
+
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-3">
+        <input type="email"
+               name="email"
+               required
+               placeholder="Enter your email"
+               class="w-full px-4 py-3 rounded-xl bg-white text-black outline-none">
+
+        <button type="submit"
+                class="w-full rounded-xl bg-lime-500 text-black font-semibold py-3 hover:bg-lime-400 transition">
+          Notify Me
+        </button>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+
+    <!-- Notify Form -->
+    <div class="mt-6 w-full max-w-md bg-black/50 backdrop-blur-md border bo
 
   <!-- Loading bar -->
     <div class="mb-6">

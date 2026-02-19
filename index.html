@@ -22,14 +22,22 @@
 
 <body class="relative min-h-screen text-white overflow-hidden">
 
-  <!-- SINGLE Background Image (positioned so moon is visible) -->
-  <div class="fixed inset-0 -z-10">
-    <img
-      src="coming-soon-bg.png"
-      alt="Moon Background"
-      class="w-full h-full object-cover opacity-95"
-      style="object-position: 25% 45%;"
-    />
+ 
+ <!-- SINGLE Background (CSS controlled so the moon is always visible) -->
+  <div
+  class="fixed inset-0 -z-10"
+  style="
+    background-image: url('coming-soon-bg.png');
+    background-repeat: no-repeat;
+    background-size: 1400px auto;
+    background-position: left 35% top 45%;
+    background-color: #000;
+  "
+  >
+  <!-- Overlay (lighter so moon shows) -->
+  <div class="absolute inset-0 bg-black/45"></div>
+</div>
+
     <!-- Overlay (lighter so moon shows) -->
     <div class="absolute inset-0 bg-black/55"></div>
   </div>

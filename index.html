@@ -18,6 +18,7 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="TradeVolt — The Smarter Way to Buy Electrical" />
   <meta name="twitter:description" content="Built for electricians and trade professionals. Powered by live market data. Priced to compete." />
@@ -38,6 +39,7 @@
   <style>
     body { margin: 0; background: black; }
 
+    /* Continuous loading sweep */
     @keyframes loadLoop {
       0%   { transform: translateX(-120%); }
       100% { transform: translateX(220%); }
@@ -46,6 +48,7 @@
       animation: loadLoop 5.5s linear infinite;
     }
 
+    /* Logo glow pulse */
     @keyframes glowPulse {
       0%, 100% { filter: drop-shadow(0 0 55px rgba(132,204,22,0.55)); }
       50%      { filter: drop-shadow(0 0 85px rgba(132,204,22,0.9)); }
@@ -54,6 +57,7 @@
       animation: glowPulse 3.8s ease-in-out infinite;
     }
 
+    /* Page fade-in */
     @keyframes fadeUp {
       0% { opacity: 0; transform: translateY(10px); }
       100% { opacity: 1; transform: translateY(0); }
@@ -81,39 +85,37 @@
   </div>
 
   <!-- Main Content -->
-  <div class="flex-grow flex items-center justify-center px-6 page-enter">
-  <div class="text-center flex flex-col items-center space-y-6 max-w-2xl">
+  <main class="flex-grow flex items-center justify-center px-6 page-enter">
+    <div class="w-full max-w-4xl flex flex-col items-center text-center">
 
-  <!-- Positioning Line -->
-  <p class="uppercase tracking-[0.3em] text-xs md:text-sm text-white/60">
-    The Smarter Way to Buy Electrical
-  </p>
+      <!-- Clean Hero -->
+      <div class="flex flex-col items-center space-y-6">
 
-  <!-- Logo -->
-  <img
-    src="tradevolt-logo.png"
-    alt="TradeVolt Logo"
-    class="w-[380px] max-w-[85%] logo-glow"
-  />
+        <p class="uppercase tracking-[0.3em] text-xs md:text-sm text-white/60">
+          The Smarter Way to Buy Electrical
+        </p>
 
-  <!-- Launching Soon -->
-  <p class="uppercase tracking-[0.35em] text-white/60 text-sm">
-    Launching Soon
-  </p>
+        <img
+          src="tradevolt-logo.png"
+          alt="TradeVolt Logo"
+          class="w-[380px] max-w-[85%] logo-glow"
+        />
 
-  <!-- Loading Bar -->
-  <div class="w-72 md:w-96">
-    <div class="h-2 rounded-full bg-white/20 overflow-hidden ring-1 ring-white/10">
-      <div class="h-full w-full relative">
-        <div class="absolute top-0 left-0 h-full w-[45%] rounded-full bg-gradient-to-r from-lime-400 via-emerald-400 to-cyan-400 loading-loop"></div>
+        <p class="uppercase tracking-[0.35em] text-white/60 text-sm">
+          Launching Soon
+        </p>
+
+        <div class="w-72 md:w-96">
+          <div class="h-2 rounded-full bg-white/20 overflow-hidden ring-1 ring-white/10">
+            <div class="h-full w-full relative">
+              <div class="absolute top-0 left-0 h-full w-[45%] rounded-full bg-gradient-to-r from-lime-400 via-emerald-400 to-cyan-400 loading-loop"></div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-
-</div>
 
       <!-- Social Proof Strip -->
-      <div class="w-full grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6">
+      <div class="w-full grid grid-cols-1 sm:grid-cols-3 gap-3 mt-8">
         <div class="bg-black/35 border border-white/10 rounded-xl px-4 py-3 backdrop-blur-sm">
           <p class="text-xs tracking-[0.25em] uppercase text-white/60">Built for trade</p>
           <p class="text-sm text-white/85 mt-1">Electricians • Contractors • Small firms</p>
@@ -129,7 +131,7 @@
       </div>
 
       <!-- Email Capture -->
-      <div class="mt-6 w-full bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl p-8">
+      <div class="mt-8 w-full bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl p-8">
         <h2 class="text-xl font-semibold mb-2">
           Join the Founding Trade Members List
         </h2>
@@ -154,10 +156,9 @@
             Get Early Trade Access
           </button>
 
-          <!-- Stronger Trade CTA -->
           <a
             href="/trade.html"
-            class="block w-full text-center rounded-xl border-2 border-lime-400 text-lime-400 font-semibold py-3 hover:bg-lime-400 hover:text-black transition"
+            class="block w-full text-center rounded-xl bg-white/10 border border-white/20 text-white font-semibold py-3 hover:bg-white/15 transition"
           >
             Apply for a Trade Account
           </a>
@@ -173,7 +174,7 @@
       </div>
 
     </div>
-  </div>
+  </main>
 
   <!-- Footer -->
   <footer class="w-full text-center py-8 border-t border-white/10 bg-black/40 backdrop-blur-sm">
@@ -183,23 +184,23 @@
 
     <div class="flex items-center justify-center gap-8 mb-4">
       <!-- X -->
-      <a href="https://x.com/TradeVoltUK" target="_blank" class="group transition" aria-label="X">
+      <a href="https://x.com/TradeVoltUK" target="_blank" class="group transition" aria-label="X" rel="noopener">
         <svg class="w-6 h-6 text-white/60 group-hover:text-lime-400 group-hover:drop-shadow-[0_0_12px_rgba(132,204,22,0.9)] transition"
              fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18.244 2H21.5l-7.55 8.63L22 22h-6.75l-5.29-6.9L4.5 22H1.24l8.1-9.26L2 2h6.9l4.77 6.26L18.244 2z"/>
+          <path d="M18.244 2H21.5l-7.55 8.63L22 22h-6.75l-5.29-6.9L4.5 22H1.24l8.1-9.26L2 2h6.9l4.77 6.26L18.244 2zm-2.37 18h1.87L8.07 4H6.14l9.734 16z"/>
         </svg>
       </a>
 
       <!-- Instagram -->
-      <a href="https://instagram.com/TradeVoltUK" target="_blank" class="group transition" aria-label="Instagram">
+      <a href="https://instagram.com/TradeVoltUK" target="_blank" class="group transition" aria-label="Instagram" rel="noopener">
         <svg class="w-6 h-6 text-white/60 group-hover:text-lime-400 group-hover:drop-shadow-[0_0_12px_rgba(132,204,22,0.9)] transition"
              fill="currentColor" viewBox="0 0 24 24">
-          <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Z"/>
+          <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.4-2.2a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/>
         </svg>
       </a>
 
       <!-- Facebook -->
-      <a href="https://facebook.com/TradeVoltUK" target="_blank" class="group transition" aria-label="Facebook">
+      <a href="https://facebook.com/TradeVoltUK" target="_blank" class="group transition" aria-label="Facebook" rel="noopener">
         <svg class="w-6 h-6 text-white/60 group-hover:text-lime-400 group-hover:drop-shadow-[0_0_12px_rgba(132,204,22,0.9)] transition"
              fill="currentColor" viewBox="0 0 24 24">
           <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H8.1V12h2.34V9.8c0-2.31 1.38-3.58 3.49-3.58.99 0 2.03.18 2.03.18v2.23h-1.14c-1.12 0-1.47.7-1.47 1.42V12h2.5l-.4 2.89h-2.1v6.99A10 10 0 0 0 22 12Z"/>

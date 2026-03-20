@@ -4,12 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>TradeVolt — The Smarter Way to Buy Electrical</title>
-  <meta name="description" content="Built for electricians and trade professionals. Powered by live market data. Priced to compete. Join the Founding Trade Members list." />
+  <title>TradeVolt — Online Electrical Wholesale, Built Properly</title>
+  <meta
+    name="description"
+    content="TradeVolt is a UK electrical wholesale platform built for electricians and contractors. Curated ranges, competitive trade pricing, and free next-day delivery over £100."
+  />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="TradeVolt — The Smarter Way to Buy Electrical" />
-  <meta property="og:description" content="Built for electricians and trade professionals. Powered by live market data. Priced to compete." />
+  <meta property="og:title" content="TradeVolt — Online Electrical Wholesale, Built Properly" />
+  <meta
+    property="og:description"
+    content="A modern electrical wholesale platform built for electricians and contractors. Curated catalogue, competitive pricing, and straightforward ordering."
+  />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.tradevolt.co.uk/" />
   <meta property="og:image" content="https://www.tradevolt.co.uk/og-image.jpg?v=4" />
@@ -20,11 +26,15 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="TradeVolt — The Smarter Way to Buy Electrical" />
-  <meta name="twitter:description" content="Built for electricians and trade professionals. Powered by live market data. Priced to compete." />
+  <meta name="twitter:title" content="TradeVolt — Online Electrical Wholesale, Built Properly" />
+  <meta
+    name="twitter:description"
+    content="Curated electrical ranges, competitive trade pricing, and a more reliable way for electricians and contractors to order online."
+  />
   <meta name="twitter:image" content="https://www.tradevolt.co.uk/og-image.jpg?v=4" />
   <meta name="twitter:site" content="@TradeVoltUK" />
   <meta name="twitter:creator" content="@TradeVoltUK" />
+
   <link rel="preload" as="image" href="/tradevolt-logo.png" fetchpriority="high">
   <link rel="preload" as="image" href="/moon-bg.jpg">
   <link rel="canonical" href="https://www.tradevolt.co.uk/" />
@@ -42,18 +52,9 @@
   </script>
 
   <style>
+    html { scroll-behavior: smooth; }
     body { margin: 0; background: black; }
 
-    /* Continuous loading sweep */
-    @keyframes loadLoop {
-      0%   { transform: translateX(-120%); }
-      100% { transform: translateX(220%); }
-    }
-    .loading-loop {
-      animation: loadLoop 5.5s linear infinite;
-    }
-
-    /* Logo glow pulse */
     @keyframes glowPulse {
       0%, 100% { filter: drop-shadow(0 0 55px rgba(132,204,22,0.55)); }
       50%      { filter: drop-shadow(0 0 85px rgba(132,204,22,0.9)); }
@@ -62,13 +63,23 @@
       animation: glowPulse 3.8s ease-in-out infinite;
     }
 
-    /* Page fade-in */
     @keyframes fadeUp {
       0% { opacity: 0; transform: translateY(10px); }
       100% { opacity: 1; transform: translateY(0); }
     }
     .page-enter {
       animation: fadeUp 0.9s ease-out both;
+    }
+
+    .section-card {
+      background: rgba(0, 0, 0, 0.42);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 1rem;
+    }
+
+    .lime-glow:hover {
+      box-shadow: 0 0 28px rgba(132, 204, 22, 0.38);
     }
   </style>
 </head>
@@ -86,99 +97,277 @@
       background-color: #000;
     "
   >
-    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="absolute inset-0 bg-black/65"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(132,204,22,0.12),transparent_30%)]"></div>
   </div>
 
-  <!-- Main Content -->
-  <main class="flex-grow flex items-center justify-center px-6 page-enter">
-    <div class="w-full max-w-3xl flex flex-col items-center text-center">
+  <main class="flex-grow page-enter">
+    <div class="max-w-6xl mx-auto px-6 pt-16 pb-20">
 
-      <!-- Clean Hero -->
-      <div class="flex flex-col items-center space-y-6">
-
-        <p class="uppercase tracking-[0.3em] text-xs md:text-sm text-white/60">
-          The Smarter Way to Buy Electrical
+      <!-- Hero -->
+      <section class="max-w-4xl mx-auto text-center">
+        <p class="uppercase tracking-[0.32em] text-xs md:text-sm text-white/60">
+          Online Electrical Wholesale — Built Properly
         </p>
 
         <img
           src="tradevolt-logo.png"
           alt="TradeVolt Logo"
-          class="w-[380px] max-w-[85%] logo-glow"
+          class="w-[380px] max-w-[85%] mx-auto mt-5 logo-glow"
         />
 
-        <p class="uppercase tracking-[0.35em] text-white/60 text-sm">
-          Launching Soon
+        <h1 class="mt-8 text-4xl md:text-6xl font-black leading-[1.05] tracking-tight">
+          Better pricing. Less noise. A more reliable way to buy electrical.
+        </h1>
+
+        <p class="mt-5 text-base md:text-xl text-white/72 max-w-3xl mx-auto leading-relaxed">
+          TradeVolt is a UK electrical wholesale platform built for electricians and contractors.
+          We focus on the products you actually buy, keep key ranges competitively priced, and make ordering straightforward.
         </p>
 
-        <div class="w-72 md:w-96">
-          <div class="h-2 rounded-full bg-white/20 overflow-hidden ring-1 ring-white/10">
-            <div class="h-full w-full relative">
-              <div class="absolute top-0 left-0 h-full w-[45%] rounded-full bg-gradient-to-r from-lime-400 via-emerald-400 to-cyan-400 loading-loop"></div>
-            </div>
+        <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+          <a
+            href="/trade.html"
+            class="lime-glow inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-lime-400 to-emerald-500 text-black font-bold px-7 py-3.5 transition transform hover:scale-[1.01] shadow-[0_0_16px_rgba(132,204,22,0.32)]"
+          >
+            Apply for a Trade Account
+          </a>
+
+          <a
+            href="#why-tradevolt"
+            class="inline-flex items-center justify-center rounded-xl bg-black/55 border border-white/15 text-white font-semibold px-7 py-3.5 hover:bg-black/65 hover:border-white/25 transition"
+          >
+            Why TradeVolt
+          </a>
+        </div>
+
+        <p class="mt-4 text-xs md:text-sm text-white/50">
+          Apply in under 60 seconds for access to trade pricing and launch updates.
+        </p>
+      </section>
+
+      <!-- Trust Strip -->
+      <section class="mt-10 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div class="section-card px-4 py-3 text-sm text-white/85">✔ Curated trade catalogue</div>
+          <div class="section-card px-4 py-3 text-sm text-white/85">✔ Competitive pricing on key ranges</div>
+          <div class="section-card px-4 py-3 text-sm text-white/85">✔ Free next-day delivery over £100</div>
+          <div class="section-card px-4 py-3 text-sm text-white/85">✔ Built for electricians & contractors</div>
+        </div>
+      </section>
+
+      <!-- Why TradeVolt -->
+      <section id="why-tradevolt" class="mt-16">
+        <div class="text-center max-w-3xl mx-auto">
+          <p class="uppercase tracking-[0.28em] text-xs text-white/50">Why TradeVolt</p>
+          <h2 class="mt-3 text-3xl md:text-4xl font-extrabold">
+            Most wholesalers list everything and leave you to do the work.
+          </h2>
+          <p class="mt-4 text-white/72 text-base md:text-lg leading-relaxed">
+            TradeVolt is built differently — a curated catalogue focused on the products electricians actually use,
+            so you spend less time searching and more time getting the job done.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5 mt-10">
+          <div class="section-card p-6">
+            <p class="text-sm uppercase tracking-[0.22em] text-lime-300/90">Curated Catalogue</p>
+            <h3 class="mt-3 text-xl font-bold">150 launch SKUs. Chosen on purpose.</h3>
+            <p class="mt-3 text-white/70 leading-relaxed">
+              Wiring accessories, protection, connectors, lighting, fixings, and safety products —
+              selected around what actually moves in the trade.
+            </p>
+          </div>
+
+          <div class="section-card p-6">
+            <p class="text-sm uppercase tracking-[0.22em] text-lime-300/90">Core Ranges</p>
+            <h3 class="mt-3 text-xl font-bold">Focused on the products that matter most.</h3>
+            <p class="mt-3 text-white/70 leading-relaxed">
+              Core buying lines like RCBOs, sockets, connectors, battens, floodlights, and alarms are where
+              TradeVolt works hardest on price and visibility.
+            </p>
+          </div>
+
+          <div class="section-card p-6">
+            <p class="text-sm uppercase tracking-[0.22em] text-lime-300/90">Straightforward Ordering</p>
+            <h3 class="mt-3 text-xl font-bold">No filler. No unnecessary choice.</h3>
+            <p class="mt-3 text-white/70 leading-relaxed">
+              The aim is simple: make TradeVolt the easiest place to order from with less scrolling,
+              less friction, and a cleaner buying experience.
+            </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Social Proof Strip -->
-      <div class="w-full max-w-[540px] grid grid-cols-1 sm:grid-cols-3 gap-3 mt-8">
-        <div class="bg-black/35 border border-white/10 rounded-xl px-4 py-2.5 backdrop-blur-sm">
-          <p class="text-xs sm:text-sm text-white/80 mt-1 leading-snug">Built for Trade</p>
-          <p class="text-sm text-white/85 mt-1">Electricians & Contractors</p>
+      <!-- Pricing -->
+      <section class="mt-16">
+        <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-6 items-stretch">
+          <div class="section-card p-7 md:p-8">
+            <p class="uppercase tracking-[0.28em] text-xs text-white/50">Pricing</p>
+            <h2 class="mt-3 text-3xl font-extrabold">
+              Competitive where it counts.
+            </h2>
+            <p class="mt-4 text-white/72 leading-relaxed">
+              TradeVolt uses a structured pricing model to keep key products competitive.
+              Public customers can order at standard pricing, while approved trade accounts unlock
+              more aggressive trade rates when logged in.
+            </p>
+            <p class="mt-4 text-white/72 leading-relaxed">
+              Pricing is monitored continuously against supplier costs and market levels to maintain
+              consistency across the ranges that matter most.
+            </p>
+
+            <div class="grid sm:grid-cols-3 gap-3 mt-6">
+              <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+                <p class="text-2xl font-black">150</p>
+                <p class="text-sm text-white/65 mt-1">Phase 0 SKUs priced and validated</p>
+              </div>
+              <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+                <p class="text-2xl font-black">127</p>
+                <p class="text-sm text-white/65 mt-1">Currently tracking OK</p>
+              </div>
+              <div class="rounded-xl bg-white/5 border border-white/10 p-4">
+                <p class="text-2xl font-black">Top 3</p>
+                <p class="text-sm text-white/65 mt-1">Target position on key lines</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-card p-7 md:p-8">
+            <p class="uppercase tracking-[0.28em] text-xs text-white/50">What This Means For You</p>
+            <ul class="mt-4 space-y-4 text-white/78">
+              <li class="flex gap-3">
+                <span class="text-lime-300">—</span>
+                <span>Less time checking multiple websites.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-lime-300">—</span>
+                <span>Pricing that stays consistent on key products.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-lime-300">—</span>
+                <span>Trade rates designed for regular buyers.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-lime-300">—</span>
+                <span>A simpler, more reliable place to order from.</span>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="bg-black/35 border border-white/10 rounded-xl px-4 py-2.5 backdrop-blur-sm">
-          <p class="text-xs sm:text-sm text-white/80 mt-1 leading-snug">Price-Smart</p>
-          <p class="text-sm text-white/85 mt-1">Data Driven Pricing</p>
+      </section>
+
+      <!-- Delivery / Operations -->
+      <section class="mt-16">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="section-card p-7">
+            <p class="uppercase tracking-[0.28em] text-xs text-white/50">Delivery</p>
+            <h2 class="mt-3 text-3xl font-extrabold">Order today. Delivered tomorrow.</h2>
+            <p class="mt-4 text-white/72 leading-relaxed">
+              Orders are picked, packed, and dispatched from our Wellington warehouse and shipped with DPD.
+            </p>
+            <p class="mt-4 text-white/72 leading-relaxed">
+              Free next-day delivery is available on orders over £100.
+            </p>
+          </div>
+
+          <div class="section-card p-7">
+            <p class="uppercase tracking-[0.28em] text-xs text-white/50">Operational Discipline</p>
+            <h2 class="mt-3 text-3xl font-extrabold">Built around consistency.</h2>
+            <p class="mt-4 text-white/72 leading-relaxed">
+              Website orders flow into the ERP, stock is allocated, pick notes are produced,
+              and orders move through a dedicated pick, pack, and dispatch workflow.
+            </p>
+            <p class="mt-4 text-white/72 leading-relaxed">
+              The objective is straightforward: reliable fulfilment without unnecessary complexity.
+            </p>
+          </div>
         </div>
-        <div class="bg-black/35 border border-white/10 rounded-xl px-4 py-2.5 backdrop-blur-sm">
-          <p class="text-xs sm:text-sm text-white/80 mt-1 leading-snug">Early Access</p>
-          <p class="text-sm text-white/85 mt-1">Trade Member Perks</p>
+      </section>
+
+      <!-- How it works -->
+      <section class="mt-16">
+        <div class="text-center max-w-3xl mx-auto">
+          <p class="uppercase tracking-[0.28em] text-xs text-white/50">How It Works</p>
+          <h2 class="mt-3 text-3xl md:text-4xl font-extrabold">Simple from the start.</h2>
         </div>
-      </div>
 
-      <!-- Email Capture -->
-      <div class="mt-6 w-full max-w-[540px] bg-black/50 backdrop-blur-md border border-white/10 rounded-2xl p-6">
-        <h2 class="text-lg md:text-xl font-semibold mb-2">
-          Join the Founding Trade Members List
-        </h2>
+        <div class="grid md:grid-cols-3 gap-5 mt-10">
+          <div class="section-card p-6 text-center">
+            <div class="w-11 h-11 rounded-full bg-lime-400 text-black font-black flex items-center justify-center mx-auto">1</div>
+            <h3 class="mt-4 text-xl font-bold">Apply</h3>
+            <p class="mt-3 text-white/70">Submit your trade application in under a minute.</p>
+          </div>
 
-        <p class="text-white/70 mb-5 text-sm">
-          Be first to access trade pricing powered by live market data.
-        </p>
+          <div class="section-card p-6 text-center">
+            <div class="w-11 h-11 rounded-full bg-lime-400 text-black font-black flex items-center justify-center mx-auto">2</div>
+            <h3 class="mt-4 text-xl font-bold">Get Approved</h3>
+            <p class="mt-3 text-white/70">Once approved, your account unlocks trade pricing when you log in.</p>
+          </div>
 
-        <form id="notifyForm" class="space-y-3 w-full">
-        <input
-          type="email"
-          name="email"
-          required
-          placeholder="Enter your email"
-          class="w-full px-4 py-3 rounded-xl bg-white text-black placeholder-gray-500 outline-none focus:ring-2 focus:ring-lime-400 transition"
-        />
+          <div class="section-card p-6 text-center">
+            <div class="w-11 h-11 rounded-full bg-lime-400 text-black font-black flex items-center justify-center mx-auto">3</div>
+            <h3 class="mt-4 text-xl font-bold">Order Fast</h3>
+            <p class="mt-3 text-white/70">Buy the products you actually need without wasting time on filler stock.</p>
+          </div>
+        </div>
+      </section>
 
-      <!-- PRIMARY CTA: Trade Account -->
-      <a
-        href="/trade.html"
-        class="block w-full text-center rounded-xl bg-gradient-to-r from-lime-400 to-emerald-500 text-black font-bold py-3 transition transform hover:scale-[1.01] hover:shadow-[0_0_25px_rgba(132,204,22,0.55)] shadow-[0_0_12px_rgba(132,204,22,0.35)]"
-      >
-        Apply for a Trade Account
-      </a>
+      <!-- FAQ -->
+      <section class="mt-16">
+        <div class="text-center max-w-3xl mx-auto">
+          <p class="uppercase tracking-[0.28em] text-xs text-white/50">FAQ</p>
+          <h2 class="mt-3 text-3xl md:text-4xl font-extrabold">What trade buyers need to know.</h2>
+        </div>
 
-      <!-- SECONDARY CTA: Early Access (subtle) -->
-      <button
-        type="submit"
-        class="w-full rounded-xl bg-black/70 text-white font-semibold py-3 border border-white/15 hover:bg-black/60 hover:border-white/25 transition"
-      >
-        Get Early Trade Access
-      </button>
+        <div class="grid md:grid-cols-2 gap-5 mt-10">
+          <div class="section-card p-6">
+            <h3 class="text-lg font-bold">Can anyone order from TradeVolt?</h3>
+            <p class="mt-3 text-white/70 leading-relaxed">
+              Yes. Public customers can buy at web pricing. Approved trade account holders see separate trade pricing when logged in.
+            </p>
+          </div>
 
-      <p id="formError" class="hidden text-sm text-red-300 pt-1">
-        Something went wrong — please try again.
-      </p>
-    </form>
+          <div class="section-card p-6">
+            <h3 class="text-lg font-bold">Why apply for a trade account?</h3>
+            <p class="mt-3 text-white/70 leading-relaxed">
+              Trade accounts are designed to reward electricians and regular trade buyers with more competitive pricing and a better buying experience.
+            </p>
+          </div>
 
-      <p class="text-xs text-white/50 mt-4">
-        No spam. Just launch access and trade updates.
-      </p>
-      </div>
+          <div class="section-card p-6">
+            <h3 class="text-lg font-bold">What makes TradeVolt different?</h3>
+            <p class="mt-3 text-white/70 leading-relaxed">
+              A curated catalogue, focused core ranges, disciplined pricing, and a platform built around how trade customers actually buy.
+            </p>
+          </div>
+
+          <div class="section-card p-6">
+            <h3 class="text-lg font-bold">When do you offer free next-day delivery?</h3>
+            <p class="mt-3 text-white/70 leading-relaxed">
+              Free next-day delivery is available on orders over £100.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="mt-16 max-w-4xl mx-auto">
+        <div class="section-card p-8 md:p-10 text-center">
+          <p class="uppercase tracking-[0.28em] text-xs text-white/50">Trade Account</p>
+          <h2 class="mt-3 text-3xl md:text-5xl font-extrabold">Open your TradeVolt account.</h2>
+          <p class="mt-4 text-white/72 max-w-2xl mx-auto leading-relaxed">
+            Access trade pricing and a more straightforward way to order electrical online.
+          </p>
+
+          <a
+            href="/trade.html"
+            class="lime-glow mt-7 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-lime-400 to-emerald-500 text-black font-bold px-8 py-3.5 transition transform hover:scale-[1.01] shadow-[0_0_16px_rgba(132,204,22,0.32)]"
+          >
+            Apply for a Trade Account
+          </a>
+        </div>
+      </section>
 
     </div>
   </main>
@@ -186,11 +375,10 @@
   <!-- Footer -->
   <footer class="w-full text-center py-8 border-t border-white/10 bg-black/40 backdrop-blur-sm">
     <p class="text-sm text-white/60 mb-4">
-      Follow us on our socials for exclusive content, competitions and discount codes!
+      Follow us on our socials for exclusive content, competitions and launch updates.
     </p>
 
     <div class="flex items-center justify-center gap-8 mb-4">
-      <!-- X -->
       <a href="https://x.com/TradeVoltUK" target="_blank" class="group transition" aria-label="X" rel="noopener">
         <svg class="w-6 h-6 text-white/60 group-hover:text-lime-400 group-hover:drop-shadow-[0_0_12px_rgba(132,204,22,0.9)] transition"
              fill="currentColor" viewBox="0 0 24 24">
@@ -198,7 +386,6 @@
         </svg>
       </a>
 
-      <!-- Instagram -->
       <a href="https://instagram.com/TradeVoltUK" target="_blank" class="group transition" aria-label="Instagram" rel="noopener">
         <svg class="w-6 h-6 text-white/60 group-hover:text-lime-400 group-hover:drop-shadow-[0_0_12px_rgba(132,204,22,0.9)] transition"
              fill="currentColor" viewBox="0 0 24 24">
@@ -206,7 +393,6 @@
         </svg>
       </a>
 
-      <!-- Facebook -->
       <a href="https://facebook.com/TradeVoltUK" target="_blank" class="group transition" aria-label="Facebook" rel="noopener">
         <svg class="w-6 h-6 text-white/60 group-hover:text-lime-400 group-hover:drop-shadow-[0_0_12px_rgba(132,204,22,0.9)] transition"
              fill="currentColor" viewBox="0 0 24 24">
@@ -220,34 +406,25 @@
     </p>
   </footer>
 
-  <!-- Form Script -->
   <script>
-    const form = document.getElementById("notifyForm");
-    const errorEl = document.getElementById("formError");
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      errorEl.classList.add("hidden");
-
-      try {
+    const whyButton = document.querySelector('a[href="#why-tradevolt"]');
+    if (whyButton) {
+      whyButton.addEventListener("click", () => {
         if (typeof gtag === "function") {
-          gtag("event", "email_signup", { method: "formspree" });
+          gtag("event", "homepage_why_tradevolt_click", { section: "hero" });
         }
+      });
+    }
 
-        const res = await fetch("https://formspree.io/f/maqdbzqz", {
-          method: "POST",
-          headers: { "Accept": "application/json" },
-          body: new FormData(form),
-        });
-
-        if (res.ok) {
-          window.location.href = "/thank-you.html";
-        } else {
-          errorEl.classList.remove("hidden");
+    const applyButtons = document.querySelectorAll('a[href="/trade.html"]');
+    applyButtons.forEach((button, index) => {
+      button.addEventListener("click", () => {
+        if (typeof gtag === "function") {
+          gtag("event", "homepage_trade_apply_click", {
+            position: index === 0 ? "hero" : "final_cta"
+          });
         }
-      } catch {
-        errorEl.classList.remove("hidden");
-      }
+      });
     });
   </script>
 

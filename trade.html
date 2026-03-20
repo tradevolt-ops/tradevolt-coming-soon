@@ -5,132 +5,360 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>TradeVolt — Apply for Trade Access</title>
+  <meta
+    name="description"
+    content="Apply for a TradeVolt trade account. Access trade pricing, a curated catalogue, and a more reliable way to buy electrical."
+  />
+
+  <link rel="canonical" href="https://www.tradevolt.co.uk/trade.html" />
+  <link rel="preload" as="image" href="/tradevolt-logo.png" fetchpriority="high">
+  <link rel="preload" as="image" href="/moon-bg.jpg">
+
+  <meta property="og:title" content="TradeVolt — Apply for Trade Access" />
+  <meta
+    property="og:description"
+    content="Apply for a TradeVolt trade account. Access trade pricing, a curated catalogue, and a more reliable way to buy electrical."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.tradevolt.co.uk/trade.html" />
+  <meta property="og:image" content="https://www.tradevolt.co.uk/og-image.jpg?v=4" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TradeVolt — Apply for Trade Access" />
+  <meta
+    name="twitter:description"
+    content="Apply for a TradeVolt trade account. Access trade pricing, a curated catalogue, and a more reliable way to buy electrical."
+  />
+  <meta name="twitter:image" content="https://www.tradevolt.co.uk/og-image.jpg?v=4" />
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8W7HSX2MB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S8W7HSX2MB');
+  </script>
 
   <style>
-    body { margin:0; background:black; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: black; }
+
+    @keyframes glowPulse {
+      0%, 100% { filter: drop-shadow(0 0 55px rgba(132,204,22,0.55)); }
+      50%      { filter: drop-shadow(0 0 85px rgba(132,204,22,0.9)); }
+    }
+    .logo-glow { animation: glowPulse 3.8s ease-in-out infinite; }
+
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .page-enter { animation: fadeUp 0.9s ease-out both; }
 
     .section-card {
-      background: rgba(0,0,0,0.42);
+      background: rgba(0, 0, 0, 0.42);
       backdrop-filter: blur(12px);
-      border:1px solid rgba(255,255,255,0.1);
-      border-radius:1rem;
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 1rem;
     }
 
     .lime-glow:hover {
-      box-shadow:0 0 28px rgba(132,204,22,0.4);
+      box-shadow: 0 0 28px rgba(132, 204, 22, 0.38);
     }
   </style>
 </head>
 
-<body class="text-white min-h-screen">
+<body class="relative min-h-[100svh] text-white overflow-x-hidden overflow-y-auto flex flex-col">
 
-<div class="max-w-5xl mx-auto px-6 py-16">
-
-  <!-- HEADER -->
-  <div class="text-center max-w-3xl mx-auto">
-
-    <p class="uppercase tracking-[0.32em] text-xs text-[#B8FF00]">
-      Trade Account Application
-    </p>
-
-    <h1 class="mt-6 text-4xl md:text-6xl font-black leading-[1.1]">
-      <span class="block text-[#B8FF00]">Apply For Trade Access.</span>
-      <span class="block mt-1">Consistent Pricing.</span>
-      <span class="block mt-1">A Faster Way To Order Electrical</span>
-    </h1>
-
-    <p class="mt-6 text-white/70 text-lg">
-      Built for electricians and contractors who want less noise,
-      better pricing, and a more reliable place to order from.
-    </p>
-
-    <p class="mt-3 text-white/50 text-sm">
-      Takes under 60 seconds. No paperwork. Approval is quick.
-    </p>
-
+  <!-- Background -->
+  <div
+    class="fixed inset-0 -z-10"
+    style="
+      background-image: url('moon-bg.jpg');
+      background-repeat: no-repeat;
+      background-size: 1400px auto;
+      background-position: left 35% top 45%;
+      background-color: #000;
+    "
+  >
+    <div class="absolute inset-0 bg-black/65"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(132,204,22,0.12),transparent_30%)]"></div>
   </div>
 
-  <!-- TRUST STRIP -->
-  <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+  <main class="flex-grow page-enter">
+    <div class="max-w-6xl mx-auto px-6 pt-16 pb-20">
 
-    <div class="section-card px-5 py-4 flex items-center justify-center text-center gap-2">
-      <span class="text-[#B8FF00]">✔</span>
-      <span class="text-sm">Trade Pricing Access</span>
+      <section class="max-w-4xl mx-auto text-center">
+        <p class="uppercase tracking-[0.32em] text-xs md:text-sm text-[#B8FF00]">
+          Trade Account Application
+        </p>
+
+        <img
+          src="tradevolt-logo.png"
+          alt="TradeVolt Logo"
+          class="w-[380px] max-w-[85%] mx-auto mt-5 logo-glow"
+        />
+
+        <h1 class="mt-8 text-4xl md:text-6xl font-black tracking-tight text-center leading-[1.1]">
+          <span class="block text-[#B8FF00]">Apply For Trade Access.</span>
+          <span class="block text-white mt-1">Consistent Pricing.</span>
+          <span class="block text-white mt-1 md:mt-2">A Faster Way To Order Electrical</span>
+        </h1>
+
+        <p class="mt-6 text-base md:text-xl text-white/72 max-w-3xl mx-auto leading-relaxed">
+          Built for electricians and contractors who want less noise, better pricing,
+          and a more reliable place to order from.
+        </p>
+
+        <p class="mt-4 text-sm md:text-base text-white/60 max-w-2xl mx-auto leading-relaxed">
+          Apply in under a minute. Once approved, your account unlocks trade pricing when you log in.
+        </p>
+      </section>
+
+      <!-- Trust Strip -->
+      <section class="mt-12 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="section-card px-5 py-4 flex items-center justify-center text-center gap-2">
+            <span class="text-[#B8FF00] text-base">✔</span>
+            <span class="text-sm text-white/85">Trade Pricing Access</span>
+          </div>
+          <div class="section-card px-5 py-4 flex items-center justify-center text-center gap-2">
+            <span class="text-[#B8FF00] text-base">✔</span>
+            <span class="text-sm text-white/85">Curated Product Ranges</span>
+          </div>
+          <div class="section-card px-5 py-4 flex items-center justify-center text-center gap-2">
+            <span class="text-[#B8FF00] text-base">✔</span>
+            <span class="text-sm text-white/85">Next-Day Delivery Over £100</span>
+          </div>
+          <div class="section-card px-5 py-4 flex items-center justify-center text-center gap-2">
+            <span class="text-[#B8FF00] text-base">✔</span>
+            <span class="text-sm text-white/85">Built For Electricians & Contractors</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Split Layout -->
+      <section class="mt-12 max-w-6xl mx-auto grid lg:grid-cols-[0.95fr_1.05fr] gap-6 items-start">
+
+        <!-- Left Side -->
+        <div class="space-y-6">
+          <div class="section-card p-7 md:p-8">
+            <p class="uppercase tracking-[0.28em] text-xs text-[#B8FF00]">Why TradeVolt</p>
+            <h2 class="mt-3 text-3xl font-extrabold">A trade account that actually earns its place.</h2>
+            <p class="mt-4 text-white/72 leading-relaxed">
+              TradeVolt is built for buyers who want the important things done properly:
+              competitive pricing, a cleaner catalogue, and a faster route to the products that actually get used.
+            </p>
+          </div>
+
+          <div class="section-card p-7 md:p-8">
+            <p class="uppercase tracking-[0.28em] text-xs text-[#B8FF00]">What You Get</p>
+            <div class="mt-4 space-y-4 text-white/78">
+              <div>
+                <h3 class="text-lg font-bold">Trade pricing on key ranges</h3>
+                <p class="mt-2 text-white/68 leading-relaxed">
+                  Once approved, your account unlocks trade pricing when logged in.
+                </p>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold">Less searching. Less friction.</h3>
+                <p class="mt-2 text-white/68 leading-relaxed">
+                  A curated catalogue focused on the products electricians actually buy, not endless filler SKUs.
+                </p>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold">A more reliable place to order from</h3>
+                <p class="mt-2 text-white/68 leading-relaxed">
+                  Competitive pricing, clearer buying, and operational discipline behind the scenes.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-card p-7 md:p-8">
+            <p class="uppercase tracking-[0.28em] text-xs text-[#B8FF00]">Before You Apply</p>
+            <div class="mt-4 space-y-3 text-white/75 leading-relaxed">
+              <p>No paperwork. No back and forth. Approval is quick.</p>
+              <p>Trade accounts are currently being approved ahead of launch.</p>
+              <p>This form helps us understand who you buy from, what brands matter to you, and where TradeVolt can earn your business.</p>
+            </div>
+          </div>
+
+          <a
+            href="/"
+            class="inline-flex items-center gap-2 text-white/70 hover:text-white transition underline underline-offset-4"
+          >
+            <span>←</span>
+            <span>Back to Homepage</span>
+          </a>
+        </div>
+
+        <!-- Right Side Form -->
+        <div class="section-card p-7 md:p-8">
+          <p class="uppercase tracking-[0.28em] text-xs text-[#B8FF00]">Apply Now</p>
+          <h2 class="mt-3 text-3xl font-extrabold">Complete the form to request trade access.</h2>
+          <p class="mt-4 text-white/65 leading-relaxed">
+            Takes under 60 seconds. Once submitted, your application goes straight through to review.
+          </p>
+
+          <form
+            action="https://api.staticforms.dev/submit"
+            method="POST"
+            class="mt-6 space-y-4"
+          >
+            <input type="hidden" name="apiKey" value="sf_033818789a1af56c81855431" />
+            <input type="hidden" name="redirectTo" value="https://www.tradevolt.co.uk/thank-you.html" />
+            <input type="text" name="honeypot" style="display:none" />
+
+            <div>
+              <label class="block text-sm text-white/70 mb-2">Name</label>
+              <input
+                type="text"
+                name="name"
+                required
+                class="w-full px-4 py-3 rounded-xl bg-white text-black outline-none focus:ring-2 focus:ring-lime-400 transition"
+                placeholder="Your full name"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm text-white/70 mb-2">Email Address</label>
+              <input
+                type="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 rounded-xl bg-white text-black outline-none focus:ring-2 focus:ring-lime-400 transition"
+                placeholder="you@example.com"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm text-white/70 mb-2">Mobile</label>
+              <input
+                type="text"
+                name="mobile"
+                required
+                class="w-full px-4 py-3 rounded-xl bg-white text-black outline-none focus:ring-2 focus:ring-lime-400 transition"
+                placeholder="Mobile number"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm text-white/70 mb-2">Post Code</label>
+              <input
+                type="text"
+                name="postcode"
+                required
+                class="w-full px-4 py-3 rounded-xl bg-white text-black outline-none focus:ring-2 focus:ring-lime-400 transition"
+                placeholder="Post Code"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm text-white/70 mb-2">Company Name</label>
+              <input
+                type="text"
+                name="company"
+                class="w-full px-4 py-3 rounded-xl bg-white text-black outline-none focus:ring-2 focus:ring-lime-400 transition"
+                placeholder="Company name"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm text-white/70 mb-2">Trade</label>
+              <input
+                type="text"
+                name="trade"
+                class="w-full px-4 py-3 rounded-xl bg-white text-black outline-none focus:ring-2 focus:ring-lime-400 transition"
+                placeholder="Electrician, contractor, etc."
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm text-white/70 mb-2">Monthly Spend (Average)</label>
+              <input
+                type="text"
+                name="monthly_spend"
+                class="w-full px-4 py-3 rounded-xl bg-white text-black outline-none focus:ring-2 focus:ring-lime-400 transition"
+                placeholder="Average monthly spend"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm text-white/70 mb-2">Favourite Brands</label>
+              <input
+                type="text"
+                name="favourite_brands"
+                class="w-full px-4 py-3 rounded-xl bg-white text-black outline-none focus:ring-2 focus:ring-lime-400 transition"
+                placeholder="Brands you buy most"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm text-white/70 mb-2">Current Wholesaler / Website Used</label>
+              <input
+                type="text"
+                name="current_wholesaler"
+                class="w-full px-4 py-3 rounded-xl bg-white text-black outline-none focus:ring-2 focus:ring-lime-400 transition"
+                placeholder="Who you currently buy from"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="lime-glow w-full rounded-xl bg-gradient-to-r from-lime-400 to-emerald-500 text-black font-bold py-3.5 transition transform hover:scale-[1.01] shadow-[0_0_16px_rgba(132,204,22,0.32)]"
+            >
+              Submit Trade Application
+            </button>
+
+            <p class="text-white/40 text-xs text-center pt-2">
+              Your application is reviewed once the form is completed and submitted.
+            </p>
+          </form>
+        </div>
+      </section>
+
     </div>
+  </main>
 
-    <div class="section-card px-5 py-4 flex items-center justify-center text-center gap-2">
-      <span class="text-[#B8FF00]">✔</span>
-      <span class="text-sm">Curated Catalogue</span>
-    </div>
-
-    <div class="section-card px-5 py-4 flex items-center justify-center text-center gap-2">
-      <span class="text-[#B8FF00]">✔</span>
-      <span class="text-sm">Next-Day Delivery</span>
-    </div>
-
-    <div class="section-card px-5 py-4 flex items-center justify-center text-center gap-2">
-      <span class="text-[#B8FF00]">✔</span>
-      <span class="text-sm">Built for Electricians</span>
-    </div>
-
-  </div>
-
-  <!-- FORM -->
-  <div class="section-card p-8 mt-12 max-w-3xl mx-auto">
-
-    <form action="https://api.staticforms.dev/submit" method="POST" class="space-y-4">
-
-      <!-- REQUIRED STATICFORMS -->
-      <input type="hidden" name="apiKey" value="sf_033818789a1af56c81855431">
-      <input type="hidden" name="redirectTo" value="/thank-you.html">
-      <input type="text" name="honeypot" style="display:none">
-
-      <!-- FIELDS -->
-
-      <input type="text" name="name" required placeholder="Full Name"
-      class="w-full px-4 py-3 rounded-xl text-black">
-
-      <input type="email" name="email" required placeholder="Email Address"
-      class="w-full px-4 py-3 rounded-xl text-black">
-
-      <input type="text" name="mobile" required placeholder="Mobile Number"
-      class="w-full px-4 py-3 rounded-xl text-black">
-
-      <input type="text" name="postcode" required placeholder="Post Code"
-      class="w-full px-4 py-3 rounded-xl text-black">
-
-      <input type="text" name="company" placeholder="Company Name"
-      class="w-full px-4 py-3 rounded-xl text-black">
-
-      <input type="text" name="trade" placeholder="Trade (e.g. Electrician)"
-      class="w-full px-4 py-3 rounded-xl text-black">
-
-      <input type="text" name="monthly_spend" placeholder="Monthly Spend (Average)"
-      class="w-full px-4 py-3 rounded-xl text-black">
-
-      <input type="text" name="brands" placeholder="Favourite Brands"
-      class="w-full px-4 py-3 rounded-xl text-black">
-
-      <input type="text" name="current_supplier" placeholder="Current Wholesaler / Website Used"
-      class="w-full px-4 py-3 rounded-xl text-black">
-
-      <!-- CTA -->
-      <button type="submit"
-      class="lime-glow w-full bg-lime-400 text-black py-3 rounded-xl font-bold transition">
-        Apply For Trade Access
-      </button>
-
-    </form>
-
-    <p class="text-white/40 text-xs text-center mt-4">
-      Trade accounts are currently being approved ahead of launch.
+  <footer class="w-full text-center py-8 border-t border-white/10 bg-black/40 backdrop-blur-sm">
+    <p class="text-sm text-white/60 mb-4">
+      Follow us on our socials for exclusive content, competitions and launch updates.
     </p>
 
-  </div>
+    <div class="flex items-center justify-center gap-8 mb-4">
+      <a href="https://x.com/TradeVoltUK" target="_blank" class="group transition" aria-label="X" rel="noopener">
+        <svg class="w-6 h-6 text-white/60 group-hover:text-lime-400 group-hover:drop-shadow-[0_0_12px_rgba(132,204,22,0.9)] transition"
+             fill="currentColor" viewBox="0 0 24 24">
+          <path d="M18.244 2H21.5l-7.55 8.63L22 22h-6.75l-5.29-6.9L4.5 22H1.24l8.1-9.26L2 2h6.9l4.77 6.26L18.244 2zm-2.37 18h1.87L8.07 4H6.14l9.734 16z"/>
+        </svg>
+      </a>
 
-</div>
+      <a href="https://instagram.com/TradeVoltUK" target="_blank" class="group transition" aria-label="Instagram" rel="noopener">
+        <svg class="w-6 h-6 text-white/60 group-hover:text-lime-400 group-hover:drop-shadow-[0_0_12px_rgba(132,204,22,0.9)] transition"
+             fill="currentColor" viewBox="0 0 24 24">
+          <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.4-2.2a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/>
+        </svg>
+      </a>
+
+      <a href="https://facebook.com/TradeVoltUK" target="_blank" class="group transition" aria-label="Facebook" rel="noopener">
+        <svg class="w-6 h-6 text-white/60 group-hover:text-lime-400 group-hover:drop-shadow-[0_0_12px_rgba(132,204,22,0.9)] transition"
+             fill="currentColor" viewBox="0 0 24 24">
+          <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H8.1V12h2.34V9.8c0-2.31 1.38-3.58 3.49-3.58.99 0 2.03.18 2.03.18v2.23h-1.14c-1.12 0-1.47.7-1.47 1.42V12h2.5l-.4 2.89h-2.1v6.99A10 10 0 0 0 22 12Z"/>
+        </svg>
+      </a>
+    </div>
+
+    <p class="text-xs text-white/40 tracking-widest uppercase">
+      © 2026 TradeVolt Electrical Supplies. All rights reserved.
+    </p>
+  </footer>
 
 </body>
 </html>
+trade-v6-split-layout-staticforms.html
+Displaying trade-v6-split-layout-staticforms.html.

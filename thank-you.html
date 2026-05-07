@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,18 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>TradeVolt — Application Received</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="preload" as="image" href="/tradevolt-logo.png" fetchpriority="high">
+  <link rel="preload" as="image" href="/moon-bg.jpg">
+  <link rel="icon" href="/favicon.ico" />
 
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8W7HSX2MB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S8W7HSX2MB');
+    gtag('event', 'trade_application_thankyou', { page: 'thank_you' });
+  </script>
+
   <style>
-    body { margin:0; background:black; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: black; }
 
     @keyframes glowPulse {
       0%, 100% { filter: drop-shadow(0 0 55px rgba(132,204,22,0.55)); }
       50%      { filter: drop-shadow(0 0 85px rgba(132,204,22,0.9)); }
     }
-
     .logo-glow { animation: glowPulse 3.8s ease-in-out infinite; }
+
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .page-enter { animation: fadeUp 0.9s ease-out both; }
 
     .section-card {
       background: rgba(0, 0, 0, 0.42);
@@ -27,12 +47,12 @@
     }
 
     .lime-glow:hover {
-      box-shadow: 0 0 28px rgba(132,204,22,0.38);
+      box-shadow: 0 0 28px rgba(132, 204, 22, 0.38);
     }
   </style>
 </head>
 
-<body class="relative min-h-[100svh] text-white flex flex-col">
+<body class="relative min-h-[100svh] text-white overflow-x-hidden flex flex-col">
 
   <!-- Background -->
   <div class="fixed inset-0 -z-10"
@@ -47,129 +67,168 @@
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(132,204,22,0.12),transparent_30%)]"></div>
   </div>
 
-  <main class="flex-grow flex items-center justify-center px-6">
+  <main class="flex-grow page-enter">
+    <div class="max-w-4xl mx-auto px-6 pt-16 pb-20 text-center">
 
-    <div class="max-w-4xl w-full text-center">
-
+      <!-- Header -->
       <p class="uppercase tracking-[0.32em] text-xs text-[#B8FF00]">
         Application Received
       </p>
 
-      <img src="tradevolt-logo.png"
-           class="w-[320px] max-w-[80%] mx-auto mt-6 logo-glow"/>
+      <img
+        src="tradevolt-logo.png"
+        alt="TradeVolt Logo"
+        class="w-[320px] max-w-[80%] mx-auto mt-6 logo-glow"
+      />
 
       <h1 class="mt-8 text-4xl md:text-6xl font-black leading-[1.1]">
         <span class="block text-[#B8FF00]">You're In.</span>
-        <span class="block mt-2">Trade Application Submitted</span>
+        <span class="block mt-2 text-white">Trade Application Submitted.</span>
       </h1>
 
-      <p class="mt-6 text-white/70 text-lg max-w-2xl mx-auto">
-        Your request has been received and is now being reviewed.
+      <p class="mt-6 text-white/70 text-lg max-w-2xl mx-auto leading-relaxed">
+        Your application has been received and is being reviewed.
+        You'll get a confirmation email shortly — and your login details
+        will follow when the retail site goes live.
       </p>
 
-      <!-- WHAT HAPPENS NEXT -->
-      <div class="section-card mt-12 p-8 max-w-3xl mx-auto text-center">
-
-        <p class="uppercase tracking-[0.28em] text-xs text-[#B8FF00]">
+      <!-- What happens next -->
+      <div class="section-card mt-12 p-8 max-w-3xl mx-auto text-left">
+        <p class="uppercase tracking-[0.28em] text-xs text-[#B8FF00] text-center mb-8">
           What Happens Next
         </p>
 
-        <div class="mt-8 space-y-6">
+        <div class="space-y-0">
 
-          <div>
-            <h3 class="font-bold text-lg">Application Reviewed</h3>
-            <p class="text-white/65 mt-1">
-              We review your details and trading profile.
-            </p>
+          <div class="flex gap-5 pb-7 relative">
+            <div class="flex flex-col items-center">
+              <div class="w-8 h-8 rounded-full bg-[#B8FF00] text-black font-black text-sm flex items-center justify-center flex-shrink-0">1</div>
+              <div class="w-px flex-1 bg-white/10 mt-2"></div>
+            </div>
+            <div class="pb-2">
+              <h3 class="font-bold text-lg">Application reviewed</h3>
+              <p class="text-white/60 text-sm mt-1 leading-relaxed">
+                We'll review your details and trading profile. You'll receive a welcome email confirming your application is in.
+              </p>
+            </div>
           </div>
 
-          <div>
-            <h3 class="font-bold text-lg">Account Approved</h3>
-            <p class="text-white/65 mt-1">
-              Once approved, your account is activated with trade pricing.
-            </p>
+          <div class="flex gap-5 pb-7 relative">
+            <div class="flex flex-col items-center">
+              <div class="w-8 h-8 rounded-full bg-[#B8FF00] text-black font-black text-sm flex items-center justify-center flex-shrink-0">2</div>
+              <div class="w-px flex-1 bg-white/10 mt-2"></div>
+            </div>
+            <div class="pb-2">
+              <h3 class="font-bold text-lg">Site goes live</h3>
+              <p class="text-white/60 text-sm mt-1 leading-relaxed">
+                The TradeVolt retail site launches within the next 1–2 weeks.
+                Follow us on X for the exact launch date — we'll announce it there first.
+              </p>
+            </div>
           </div>
 
-          <div>
-            <h3 class="font-bold text-lg">Access Granted</h3>
-            <p class="text-white/65 mt-1">
-              You’ll be able to log in and order immediately.
-            </p>
+          <div class="flex gap-5">
+            <div class="flex flex-col items-center">
+              <div class="w-8 h-8 rounded-full bg-[#B8FF00] text-black font-black text-sm flex items-center justify-center flex-shrink-0">3</div>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">Login details sent — start ordering</h3>
+              <p class="text-white/60 text-sm mt-1 leading-relaxed">
+                Once the site is live, we'll email your login details. Your account will be ready with trade pricing activated from day one.
+              </p>
+            </div>
           </div>
 
         </div>
-
       </div>
 
-      <p class="mt-6 text-sm text-white/50">
-        Trade accounts are currently being approved ahead of launch.
-      </p>
-
-      <!-- CTA -->
-      <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-
-        <a href="/"
-           class="lime-glow inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-lime-400 to-emerald-500 text-black font-bold px-7 py-3.5">
-          Back to Homepage
+      <!-- Follow on X -->
+      <div class="section-card mt-8 p-7 max-w-3xl mx-auto">
+        <p class="uppercase tracking-[0.28em] text-xs text-[#B8FF00] mb-3">Stay In The Loop</p>
+        <h2 class="text-2xl font-extrabold mb-3">Follow us on X for the launch announcement.</h2>
+        <p class="text-white/60 text-sm leading-relaxed mb-6">
+          We'll announce the launch date on X first — along with pricing updates, new product drops,
+          and content built for the trade. Don't miss it.
+        </p>
+        <a
+          href="https://x.com/TradeVoltUK"
+          target="_blank"
+          rel="noopener"
+          class="lime-glow inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-lime-400 to-emerald-500 text-black font-bold px-7 py-3.5 transition transform hover:scale-[1.01] shadow-[0_0_16px_rgba(132,204,22,0.32)]"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18.244 2H21.5l-7.55 8.63L22 22h-6.75l-5.29-6.9L4.5 22H1.24l8.1-9.26L2 2h6.9l4.77 6.26L18.244 2zm-2.37 18h1.87L8.07 4H6.14l9.734 16z"/>
+          </svg>
+          Follow @TradeVoltUK on X
         </a>
+      </div>
 
-        <a href="https://instagram.com/TradeVoltUK"
-           target="_blank"
-           class="inline-flex items-center justify-center rounded-xl border border-white/15 px-7 py-3.5 text-white hover:border-white/30 transition">
-          Follow TradeVolt
+      <!-- Word of mouth -->
+      <div class="section-card mt-6 p-7 max-w-3xl mx-auto">
+        <p class="uppercase tracking-[0.28em] text-xs text-[#B8FF00] mb-3">Know Someone In The Trade?</p>
+        <h2 class="text-2xl font-extrabold mb-3">Pass it on.</h2>
+        <p class="text-white/60 text-sm leading-relaxed mb-6">
+          If you know an electrician or contractor who's fed up with their current supplier —
+          send them here. Trade accounts are open now and approval is quick.
+        </p>
+        <a
+          href="/"
+          class="lime-glow inline-flex items-center justify-center rounded-xl border border-white/20 text-white font-semibold px-7 py-3.5 hover:border-white/40 transition"
+        >
+          Share tradevolt.co.uk
         </a>
+      </div>
 
+      <!-- Back to homepage -->
+      <div class="mt-10">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 text-white/50 hover:text-white transition text-sm"
+        >
+          <span>←</span>
+          <span>Back to Homepage</span>
+        </a>
       </div>
 
     </div>
-
   </main>
 
-  <!-- FOOTER WITH REAL ICONS -->
+  <!-- Footer -->
   <footer class="w-full text-center py-8 border-t border-white/10 bg-black/40 backdrop-blur-sm">
-
-    <p class="text-sm text-white/60 mb-4">
-      Follow us for updates, pricing drops and launch info.
+    <p class="text-sm text-white/60 mb-2">
+      Follow us on X for launch updates, trade content, and exclusive offers.
     </p>
+    <p class="text-xs text-white/40 mb-5">Also on Instagram and Facebook.</p>
 
-    <div class="flex items-center justify-center gap-8 mb-4">
-
-      <!-- X -->
-      <a href="https://x.com/TradeVoltUK" target="_blank" class="group">
-        <svg class="w-6 h-6 text-white/60 group-hover:text-lime-400 transition"
-          fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18.244 2H21.5l-7.55 8.63L22 22h-6.75l-5.29-6.9L4.5 22H1.24l8.1-9.26L2 2h6.9l4.77 6.26L18.244 2z"/>
+    <div class="flex items-center justify-center gap-8 mb-6">
+      <!-- X — primary -->
+      <a href="https://x.com/TradeVoltUK" target="_blank" class="group transition" aria-label="X / Twitter" rel="noopener">
+        <svg class="w-7 h-7 text-[#B8FF00] group-hover:drop-shadow-[0_0_12px_rgba(184,255,0,0.9)] transition"
+             fill="currentColor" viewBox="0 0 24 24">
+          <path d="M18.244 2H21.5l-7.55 8.63L22 22h-6.75l-5.29-6.9L4.5 22H1.24l8.1-9.26L2 2h6.9l4.77 6.26L18.244 2zm-2.37 18h1.87L8.07 4H6.14l9.734 16z"/>
         </svg>
       </a>
 
-      <!-- Instagram -->
-      <a href="https://instagram.com/TradeVoltUK" target="_blank" class="group">
-        <svg class="w-6 h-6 text-white/60 group-hover:text-lime-400 transition"
-          fill="currentColor" viewBox="0 0 24 24">
-          <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2z"/>
+      <!-- Instagram — secondary -->
+      <a href="https://instagram.com/TradeVoltUK" target="_blank" class="group transition" aria-label="Instagram" rel="noopener">
+        <svg class="w-6 h-6 text-white/40 group-hover:text-lime-400 group-hover:drop-shadow-[0_0_12px_rgba(132,204,22,0.9)] transition"
+             fill="currentColor" viewBox="0 0 24 24">
+          <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.4-2.2a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/>
         </svg>
       </a>
 
-      <!-- Facebook -->
-      <a href="https://facebook.com/TradeVoltUK" target="_blank" class="group">
-        <svg class="w-6 h-6 text-white/60 group-hover:text-lime-400 transition"
-          fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H8.1V12h2.34V9.8c0-2.31 1.38-3.58 3.49-3.58z"/>
+      <!-- Facebook — secondary -->
+      <a href="https://facebook.com/TradeVoltUK" target="_blank" class="group transition" aria-label="Facebook" rel="noopener">
+        <svg class="w-6 h-6 text-white/40 group-hover:text-lime-400 group-hover:drop-shadow-[0_0_12px_rgba(132,204,22,0.9)] transition"
+             fill="currentColor" viewBox="0 0 24 24">
+          <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H8.1V12h2.34V9.8c0-2.31 1.38-3.58 3.49-3.58.99 0 2.03.18 2.03.18v2.23h-1.14c-1.12 0-1.47.7-1.47 1.42V12h2.5l-.4 2.89h-2.1v6.99A10 10 0 0 0 22 12Z"/>
         </svg>
       </a>
-
     </div>
 
-    <p class="text-xs text-white/40 uppercase tracking-widest">
-      © 2026 TradeVolt Electrical Supplies is a trading name of J.A.B Electrical Supplies Ltd. VAT No. GB216285617. All rights reserved.
+    <p class="text-xs text-white/40 tracking-widest uppercase">
+      © 2026 TradeVolt Electrical Supplies is a trading name under J.A.B Electrical Supplies Ltd VAT No. GB216285617. All rights reserved.
     </p>
-
-  </footer>
-
-</body>
-</html>
-    </p>
-
   </footer>
 
 </body>
